@@ -7,24 +7,10 @@
   = @article.text
 
 %h2 Comments
-- @article.comments.each do |comment|
-  %p
-    %strong Commenter:
-    = comment.commenter
-  %p
-    %strong Comment:
-    = comment.body
+= render @article.comments
 
 %h2 Add a Comment
-= form_with model: [ @article, @article.comments.build ], local: true do |f|
-  %p
-    = f.label :commenter
-    = f.text_field :commenter
-  %p
-    = f.label :body
-    = f.text_area :body
-  %p
-    = f.submit
+= render 'comments/form'
 
 %p
   = link_to 'Back', articles_path
