@@ -8,4 +8,5 @@
     %tr
       %td= article.title
       %td= article.text
-      %td= link_to 'Show', articles_path(article)
+      %td= link_to 'Show', article_path(article)
+%p= link_to 'New Article', new_article_path
