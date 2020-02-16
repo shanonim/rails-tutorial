@@ -1,0 +1,11 @@
+%h1 Listing articles
+%table
+  %tr
+    %th Title
+    %th Text
+    %th
+  - @article.each do |article|
+    %tr
+      %td= article.title
+      %td= article.text
+      %td= link_to 'Show', articles_path(article)
